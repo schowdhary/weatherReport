@@ -1,0 +1,30 @@
+
+<html>
+<head>
+  <title></title>
+  <style>
+.article{
+  box-shadow: 5px 5px 5px #888888;
+}
+  </style>
+}
+</head>
+<body ng-controller="BlogCtrl">
+<div class="container" style="padding-top:100px;margin:0 auto">
+  <div ng-repeat="blog in blogList">
+    <div class="row article" ><a href="{{blog.b_link}}" target="_blank">
+        <div class="col-sm-4"><img src="{{blog.b_img}}" class="img-responsive"></div>
+        <div class="col-sm-8">
+          <h3 class="title">{{blog.b_head}}</h3>
+          <p class="text-muted"><span class="glyphicon glyphicon-calendar"></span>{{blog.b_pdate}}</p>
+          <p>{{blog.b_data}}</p>
+          <p class="text-muted">Source : <a href="http://www.skymetweather.com">{{blog.b_source}}</a></p>
+        </div>
+        </a>
+      </div>
+      <hr>
+  </div>
+</div>
+</body>
+</html>
+

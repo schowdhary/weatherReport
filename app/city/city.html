@@ -1,0 +1,74 @@
+
+<html>
+<head>
+  <title></title>
+  <style>
+    .btn-login {
+      background-color: #59B2E0;
+      outline: none;
+      color: #fff;
+      text-transform: uppercase;
+      border-color: #59B2E6;
+    }
+    .btn-login:hover,
+    .btn-login:focus {
+      color: #fff;
+      background-color: #53A3CD;
+      border-color: #53A3CD;
+    }
+  </style>
+</head>
+
+<body ng-controller="cityListCtrl">
+<div class="container" style="padding-top:100px;margin:0 auto">
+  <input type="text" ng-model="nameFilter" placeholder="Search..."/>
+  <table id="example" class="table table-striped table-bordered table-hover" cellspacing="0" width="100%">
+    <thead>
+      <tr><th colspan="5" align="center">Weather Report of Cities</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Index</th>
+        <th>City</th>
+        <th>State,Country</th>
+        <th>Pincode</th>
+        <th>Get Data</th>
+        <!-- ng-click="showReport($event)" -->
+      </tr>
+      <tr ng-repeat="city in cityList | filter: nameFilter">
+        <td>{{$index + 1}}</td>
+        <td>
+          {{city.City.cityName}}
+        </td>
+        <td>{{city.state+ " ,"}}&nbsp;{{city.country}}</td>
+        <td ng-model="pcode">{{city.City.pincode}}</td>
+        <td><button type="button" name="show-report" id="show-report" class="show-report btn btn-login" data-pincode="{{city.City.pincode}}" ng-click="openModal(city.City.pincode)">Show Report</button></td><br>
+        <!-- ng-click="showReport($event)" -->
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Report</h3>
+        </div>
+        <div class="modal-body">
+            <p>Longitude : {{cityData.coord.lon}}</p>
+            <p>Latitude : {{cityData.coord.lat}}</p>
+            <p>Weather : {{cityData.weather[0].main}}, {{cityData.weather[0].description}}</p>
+            <p>Temperature : {{cityData.main.temp}}</p>
+            <p>Pressure : {{cityData.main.pressure}}</p>
+            <p>Humidity : {{cityData.main.humidity}}</p>
+            <p>Wind Speed : {{cityData.wind.speed}}</p>
+            <p>Wind Degree : {{cityData.wind.deg}}</p>
+            <p>Sea Level : {{cityData.main.sea_level}}</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+  </div>
+</body>
+</html>
+

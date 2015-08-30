@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+/* Carousel base class */
+.carousel {
+  height: 500px;
+  margin-bottom: 0px;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 500px;
+  background-color: #777;
+}
+.carousel-inner > .item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 500px;
+}
+.bottomcontent{
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+
+.featurette-divider {
+  margin: 10px 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+</style>
+
+</head>
+<body>
+<div class="container">
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox" style="width=1000px">
+        <div class="item active">
+          <img class="first-slide" src="img/a.jpg" alt="First slide">
+          <div class="container">
+            <div class="carousel-caption">
+            <h1>WEATHER UPDATES</h1>
+              <p>Access current weather data for any location on Earth!Current weather is frequently updated based on global models and data from more than 40,000 weather stations.
+              </p>
+              <!-- <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p> -->
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img class="second-slide" src="img/b.jpg" alt="Second slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>BLOGS</h1>
+              <p>Get blogs from Weather enthusiasts about local, regional, and global weather and climate related issues, largely powered by its own community of enthusiasts.</p>
+              
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img class="third-slide" src="img/d.jpg" alt="Third slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>FORECAST</h1>
+              <p>Coming up soon.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">WEATHER REPORT</h2>
+          <h4><span class="text-muted">Showing news from around the world.</span></h4>
+        </div>
+      </div>
+      <p class="bottomcontent">Latest weather forecasts, alerts, blogs. Find local weather details for India and cities throughout the world.Latest hourly weather forecast for the UK with a detailed world view. Includes hour by hour forecasts, 10 day forecast, long range weather in our monthly outlook, weather warnings, videos, maps and analysis.</p>
+</div>
+</body>
+</html>
