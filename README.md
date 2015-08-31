@@ -45,6 +45,13 @@ Application Overview : An application that fetches data from Open Weather API
 ->Connect : The page is yet to be implemented.
 
 ->Signup : Used Firebase for user authentication. There are a few glitches in this section.
+Existing user on firebase : 
+Email : shikha_5368@yahoo.co.in
+Password : shikhashikha
+
+Or create a new user using Register Tab.
 
 Tested on Chrome.
+
+
 
